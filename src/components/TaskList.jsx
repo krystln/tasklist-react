@@ -12,6 +12,10 @@ export default function TaskList() {
 		}
 	]);
 
+	function deleteListItem(listItemIndex){
+		setList(prevList => prevList.filter((item) => item.id != listItemIndex))
+	}
+
 
 	function addListItem(listItem){
 		setList(prevList => [...prevList, listItem])
@@ -20,10 +24,11 @@ export default function TaskList() {
 	const listComp = list.map(listItem => {
 		return <Task
 			key={listItem.id}
+			index={listItem.id}
 			title={listItem.title}
 			desc={listItem.desc}
 			handleEditFunction=""
-			handleDeleteFunction=""
+			handleDeleteFunction={deleteListItem}
 			/>
 	})
 

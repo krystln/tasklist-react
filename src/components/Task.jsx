@@ -1,11 +1,11 @@
 export default function Task(props) {
 
 	function handleEdit(){
-
+		
 	}
 
 	function handleDelete(){
-
+		props.handleDeleteFunction(props.index)
 	}
   
 	return (
