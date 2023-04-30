@@ -12,6 +12,10 @@ export default function TaskList() {
 		}
 	]);
 
+
+	function addListItem(listItem){
+		setList(prevList => [...prevList, listItem])
+	}
 	
 	const listComp = list.map(listItem => {
 		return <Task
@@ -27,7 +31,7 @@ export default function TaskList() {
 
   	return (
 		<div>
-			<CreateTask></CreateTask>
+			<CreateTask addData={addListItem} nextId={list.length + 1}></CreateTask>
 			{listComp}
 		</div>
   	)
