@@ -3,7 +3,7 @@ export default function CreateTask(props) {
 
     const [createTaskFormData, setCreatTaskFormData] = React.useState(
         {
-            id: -1,
+            id: "",
             title: "",
             desc: ""
         }
@@ -31,22 +31,24 @@ export default function CreateTask(props) {
     }
 
     return (
-        <div>
+        <div className="CreateTask">
             <form onSubmit={handleSubmit}>
-
                 <input
+                    className="title"
+                    placeholder="Title"
                     type="text"
                     name="title"
                     value={createTaskFormData.title}
                     onChange={handleFormChange}
                 />
                 <input
+                    className="desc"
+                    placeholder="Description"
                     type="text"
                     name="desc"
                     value={createTaskFormData.desc}
                     onChange={handleFormChange}
                 />
-
                 <button>Submit</button>
             </form>
         </div>
