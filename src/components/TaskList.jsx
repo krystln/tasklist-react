@@ -30,7 +30,7 @@ export default function TaskList() {
 	
 
   	return (
-		<div>
+		<div className="TaskList">
 			<CreateTask addData={addListItem} nextId={list.length + 1}></CreateTask>
 			{listComp}
 		</div>
