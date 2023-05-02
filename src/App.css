@@ -69,6 +69,10 @@ input{
 
 .desc{
 	width: 61%;
+}
+
+.EditForm{
+	position: relative;
 
 }
 
