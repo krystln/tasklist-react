@@ -28,6 +28,11 @@ export default function CreateTask(props) {
         }))
 
         props.addData(createTaskFormData)
+        setCreatTaskFormData({
+            id: "",
+            title: "",
+            desc: ""
+        })
     }
 
     return (
