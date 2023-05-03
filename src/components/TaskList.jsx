@@ -2,7 +2,7 @@ import React from "react";
 import Task from "./Task"
 import CreateTask from "./CreateTask";
 
-export default function TaskList() {
+export default function TaskList(props) {
 	const [list, setList] = React.useState(
 	[
 		{
@@ -45,7 +45,7 @@ export default function TaskList() {
 
   	return (
 		<div className="TaskList">
-			<CreateTask addData={addListItem} nextId={list.length + 1}></CreateTask>
+			{props.showCreate && <CreateTask addData={addListItem} nextId={list.length + 1}></CreateTask>}
 			{listComp}
 		</div>
   	)
