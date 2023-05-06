@@ -2,6 +2,11 @@
 	color: #F0F6FC;
 }
 
+.Header{
+	display: flex;
+}
+
+
 .Task{
 	width: 100%;
 	display: flex;
