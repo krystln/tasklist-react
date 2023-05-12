@@ -4,6 +4,20 @@
 
 .Header{
 	display: flex;
+	margin-bottom: 2rem;
+	margin-top: 1rem;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.Header-Title{
+	margin-left: 1rem;
+	font-size: large;
+}
+
+.Header-Button{
+	width: 2rem;
+	margin-right: 1rem;
 }
 
 
