@@ -27,6 +27,7 @@
 	border: #5e6771 2px solid;
 	border-radius: 1rem;
 	margin-bottom: 1rem;
+	padding-right: 1rem;
 }
 
 .Task > *{
