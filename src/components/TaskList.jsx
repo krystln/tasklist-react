@@ -8,7 +8,8 @@ export default function TaskList(props) {
 		{
 			id: 0,
 			title: "",
-			desc: ""
+			desc: "",
+			status: false
 		}
 	]);
 
@@ -36,6 +37,7 @@ export default function TaskList(props) {
 			index={listItem.id}
 			title={listItem.title}
 			desc={listItem.desc}
+			status={listItem.status}
 			handleEditFunction={editListItem}
 			handleDeleteFunction={deleteListItem}
 			/>

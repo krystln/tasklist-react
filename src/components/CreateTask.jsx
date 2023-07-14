@@ -3,9 +3,10 @@ export default function CreateTask(props) {
 
     const [formData, setFormData] = React.useState(
         {
-            id: "",
+            id: new Date().getTime().toString(),
             title: "",
-            desc: ""
+            desc: "",
+            status: false
         }
     )
 
@@ -22,18 +23,27 @@ export default function CreateTask(props) {
 
     function handleSubmit(event){
         event.preventDefault()
-        alert(formData);
-        setFormData( prevFormData => {
-            return {
+        const uid = new Date().valueOf();
+
+        setFormData((prevFormData) => {
+            const tempObj = {
                 ...prevFormData,
-                id: new Date().toString()
-        }});
-        props.addTask(formData)
-        setFormData({
-            id: "",
-            title: "",
-            desc: ""
+                id: uid
+            }
+            return tempObj
         });
+
+        props.addTask(formData)
+        resetForm()
+    }
+
+    function resetForm(){
+        setFormData({
+            id: new Date().getTime().toString(),
+            title: "",
+            desc: "",
+            status: false
+        })
     }
 
     return (

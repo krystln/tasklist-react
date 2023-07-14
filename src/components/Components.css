@@ -103,9 +103,13 @@
     margin-top: 0rem;
 }
 
-.CreateTask_button:hover{
+.CreateTask_button:active{
     background-color: gray;
     color: white;
+    cursor: pointer;
+}
+
+.CreateTask_button:hover{
     cursor: pointer;
 }
 
@@ -114,6 +118,7 @@
     border: 1px solid gray;
     border-radius: 5px;
 
+    background-color: transparent;
     padding: 1.5rem;
 
     width: 18rem;
@@ -142,7 +147,7 @@
 
 .Task_description{
     margin: 1rem 0 0 0;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .Task_Options{
@@ -176,4 +181,61 @@
     cursor: pointer;
 }
 
+.Done{
+    background-color: rgba(50, 205, 50, 0.5);
+}
 
+
+.Task_editForm_title{
+    font-family: monospace;
+    color: white;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: transparent;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-size: x-large;
+    padding: 0.2rem; 
+    padding-left: 0.5rem; 
+}
+
+.Task_editForm_description{
+    margin-left: 1rem;
+    background-color: transparent;
+    color: white;
+
+    resize: none;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-size: large;
+    padding: 0.2rem; 
+    padding-left: 0.5rem;
+    
+    width: 15rem;
+
+    margin-bottom: 1rem;
+}
+
+.Task_editForm_submit{
+    font-family: monospace;
+    margin-left: 1rem;
+    background-color: transparent;
+    color: gray;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-size: large;
+    padding: 0.5rem;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 0rem;
+}
+
+.Task_editForm_submit:active{
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+
+.Task_editForm_submit:hover{
+    cursor: pointer;
+}

@@ -3,6 +3,7 @@ import React from "react"
 import Complete from '../assets/complete.svg'
 import Edit from '../assets/edit.svg'
 import Delete from '../assets/delete.svg'
+import Undo from '../assets/undo.svg'
 
 
 export default function Task(props) {
@@ -12,7 +13,8 @@ export default function Task(props) {
 	const [editFormData, setEditFormData] = React.useState({
 		id: props.index,
 		title: props.title,
-		desc: props.desc
+		desc: props.desc,
+		status: props.status
 	})
 
 	function handleEditing(event) {
@@ -32,18 +34,25 @@ export default function Task(props) {
 
 
 	function handleDelete() {
-		props.handleDeleteFunction(editFormData.id)
+		props.handleDeleteFunction(props.index)
+	}
+
+	function handleStatus(){
+		setEditFormData(prevEditFormData => ({
+			...prevEditFormData,
+			status: !prevEditFormData.status
+		}))
 	}
 
 	return (
-		<div className="Task">
+		<div className={"Task "  + (editFormData.status && " Done")}>
 
 			{!editing &&
 				<>
 					<div className="Task_header">
 						<h3 className="Task_title">{props.title}</h3>
 						<div className="Task_Options">
-							<button className="Task_header_complete"><img src={Complete}/></button>
+							<button className="Task_header_complete" onClick={handleStatus}><img src={editFormData.status ? Undo : Complete}/></button>
 							<button className="Task_header_edit" onClick={() => setEditing(true)}><img src={Edit}/></button>
 							<button className="Task_header_delete" onClick={handleDelete}><img src={Delete}/></button>
 						</div>
@@ -59,14 +68,16 @@ export default function Task(props) {
 							name="title"
 							value={editFormData.title}
 							onChange={handleEditing}
+							className="Task_editForm_title"
 						/>
 						<textarea
 							type="text"
 							name="desc"
 							value={editFormData.desc}
 							onChange={handleEditing}
+							className="Task_editForm_description"
 						/>
-						<input type="submit" value="Save" />
+						<input type="submit" value="Save" className="Task_editForm_submit" />
 					</form>
 				</>}
 		</div>
