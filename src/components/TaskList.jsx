@@ -7,8 +7,8 @@ export default function TaskList(props) {
 	[
 		{
 			id: 0,
-			title: "",
-			desc: "",
+			title: "Lorem",
+			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, nunc nisl ultricies nunc, vitae aliquam nisl nunc eget nunc.",
 			status: false
 		}
 	]);
