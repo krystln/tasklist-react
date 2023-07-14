@@ -60,13 +60,14 @@
 }
 
 .CreateTask_title{
+    font-family: monospace;
     color: white;
     margin-left: 1rem;
     margin-bottom: 0.5rem;
     background-color: transparent;
     border: 2px solid gray;
     border-radius: 5px;
-    font-size: large;
+    font-size: x-large;
     padding: 0.2rem; 
     padding-left: 0.5rem; 
 }
@@ -89,6 +90,7 @@
 }
 
 .CreateTask_button{
+    font-family: monospace;
     margin-left: 1rem;
     background-color: transparent;
     color: gray;
