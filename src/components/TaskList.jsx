@@ -6,15 +6,15 @@ export default function TaskList(props) {
 	const [list, setList] = React.useState(
 	[
 		{
-			id: 1,
-			title: "test",
-			desc: "Excepteur aute elit esse elit mollit ad amet."
+			id: 0,
+			title: "",
+			desc: ""
 		}
 	]);
 
 	function deleteListItem(listItemIndex){
 		setList(prevList => prevList.filter((item) => item.id != listItemIndex))
-	}
+	}	
 
 
 	function addListItem(listItem){
@@ -45,7 +45,7 @@ export default function TaskList(props) {
 
   	return (
 		<div className="TaskList">
-			{props.showCreate && <CreateTask addData={addListItem} nextId={list.length + 1}></CreateTask>}
+			<CreateTask addTask = {addListItem} />
 			{listComp}
 		</div>
   	)

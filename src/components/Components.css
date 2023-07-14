@@ -1,0 +1,183 @@
+.NavBar{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(34, 34, 34);
+    margin-bottom: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.NavBar_Title{
+    font-size: 2rem;
+}
+
+.NavBar_SideTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: large;
+    color: gray;
+}
+
+.NavBar_tooltipContainer{
+    text-decoration: none;
+    width: 2rem;
+    height: 2rem;
+}
+
+.NavBar_logo{
+    width: 2rem;
+    height: 2rem;
+}
+
+.NavBar_tooltip{
+    border-radius: 5px;
+    padding: 0.5rem;
+    visibility: hidden;
+    position: relative;
+    top: 1.2rem;
+    right: 1.5rem;
+    background-color: rgb(34, 34, 34);
+    color: white;
+    text-align: center;
+}
+
+.NavBar_tooltipContainer:hover .NavBar_tooltip{
+    visibility: visible;
+    text-decoration: none;
+}
+
+
+.CreateTask{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1rem;
+
+    width: 18rem;
+    height: fit-content;
+    margin-right: 1rem;
+}
+
+.CreateTask_title{
+    color: white;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: transparent;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-size: large;
+    padding: 0.2rem; 
+    padding-left: 0.5rem; 
+}
+
+.CreateTask_description{
+    margin-left: 1rem;
+    background-color: transparent;
+    color: white;
+
+    resize: none;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-size: large;
+    padding: 0.2rem; 
+    padding-left: 0.5rem;
+    
+    width: 15rem;
+
+    margin-bottom: 1rem;
+}
+
+.CreateTask_button{
+    margin-left: 1rem;
+    background-color: transparent;
+    color: gray;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-size: large;
+    padding: 0.5rem;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 0rem;
+}
+
+.CreateTask_button:hover{
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+
+
+.Task{
+    border: 1px solid gray;
+    border-radius: 5px;
+
+    padding: 1.5rem;
+
+    width: 18rem;
+    min-width: 16.5rem;
+    height: fit-content;
+    max-height: 21rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.Task_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.Task_title{
+    font-size: 1.25rem;
+    max-width: 10rem;
+    overflow: auto;
+    margin: 0;
+}
+
+.Task_description{
+    margin: 1rem 0 0 0;
+    overflow: scroll;
+}
+
+.Task_Options{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.Task_header_complete{
+    all:unset;
+
+    width: 2rem;
+    height: 2rem;
+    background-image: url("./src/assets/complete.svg");
+    background-size: contain;
+}
+
+.Task_header_edit{
+    all:unset;
+
+    width: 2rem;
+    height: 2rem;
+    background-image: url("./src/assets/edit.svg");
+    background-size: contain;
+}
+
+.Task_header_delete{
+    all:unset;
+
+    width: 2rem;
+    height: 2rem;
+    background-image: url("./src/assets/delete.svg");
+    background-size: contain;
+}
+
+.Task_header_edit:hover, .Task_header_delete:hover, .Task_header_complete:hover{
+    cursor: pointer;
+}
+
+

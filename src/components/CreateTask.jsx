@@ -1,7 +1,7 @@
 import React from "react"
 export default function CreateTask(props) {
 
-    const [createTaskFormData, setCreatTaskFormData] = React.useState(
+    const [formData, setFormData] = React.useState(
         {
             id: "",
             title: "",
@@ -12,9 +12,9 @@ export default function CreateTask(props) {
 
     function handleFormChange(event) {
         let {name, value} = event.target
-        setCreatTaskFormData(prevTaskFormData => {
+        setFormData((prevFormData) => {
             return {
-                ...prevTaskFormData,
+                ...prevFormData,
                 [name]: value
             }
         })
@@ -22,39 +22,42 @@ export default function CreateTask(props) {
 
     function handleSubmit(event){
         event.preventDefault()
-        setCreatTaskFormData(prevTaskFormData => ({
-            ...prevTaskFormData,
-            id: new Date().getTime().toString()
-        }))
-
-        props.addData(createTaskFormData)
-        setCreatTaskFormData({
+        alert(formData);
+        setFormData( prevFormData => {
+            return {
+                ...prevFormData,
+                id: new Date().toString()
+        }});
+        props.addTask(formData)
+        setFormData({
             id: "",
             title: "",
             desc: ""
-        })
+        });
     }
 
     return (
         <div className="CreateTask">
             <form onSubmit={handleSubmit}>
                 <input
-                    className="title"
+                    className="CreateTask_title"
                     placeholder="Title"
                     type="text"
                     name="title"
-                    value={createTaskFormData.title}
+                    value={formData.title}
                     onChange={handleFormChange}
                 />
-                <input
-                    className="desc"
+                <textarea
+                    className="CreateTask_description"
                     placeholder="Description"
                     type="text"
                     name="desc"
-                    value={createTaskFormData.desc}
+                    rows={10}
+                    columns={10}
+                    value={formData.desc}
                     onChange={handleFormChange}
                 />
-                <button>Submit</button>
+                <input type='submit' value='Create Task' className="CreateTask_button" />
             </form>
         </div>
     )
