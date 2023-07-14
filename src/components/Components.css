@@ -58,10 +58,18 @@
     height: fit-content;
     margin-right: 1rem;
 }
+.CreateTask > form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 
 .CreateTask_title{
     font-family: monospace;
     color: white;
+
+    width: 60%;
+
     margin-left: 1rem;
     margin-bottom: 0.5rem;
     background-color: transparent;
@@ -73,7 +81,6 @@
 }
 
 .CreateTask_description{
-    margin-left: 1rem;
     background-color: transparent;
     color: white;
 
@@ -84,9 +91,9 @@
     padding: 0.2rem; 
     padding-left: 0.5rem;
     
-    width: 15rem;
+    width: 90%;
 
-    margin-bottom: 1rem;
+    margin: 0rem 1rem 1rem 1rem;
 }
 
 .CreateTask_button{
@@ -212,6 +219,7 @@
     padding-left: 0.5rem;
     
     width: 15rem;
+    height: 9rem;
 
     margin-bottom: 1rem;
 }
@@ -238,4 +246,45 @@
 
 .Task_editForm_submit:hover{
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 600px){
+    .CreateTask{
+        width: 100%;
+        margin-right: 0;
+        padding: 0.75rem;
+    }
+
+    .CreateTask > form > *{
+        margin-left: 0;
+    }
+
+    .Task{
+        width: 80%;
+        padding: 0.5rem;
+    }
+
+    .Task_editForm > *{
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 800px) and (min-width: 750px){
+    .Task{
+        width: 70%%;
+        padding: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .Task_header{
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+
+        margin-bottom: 0;
+    }
 }
