@@ -283,6 +283,7 @@
         justify-content: space-between;
         display: flex;
         flex-direction: column-reverse;
+        gap: 0.5rem;
         width: 100%;
 
         margin-bottom: 0;
