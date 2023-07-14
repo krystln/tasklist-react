@@ -1,5 +1,9 @@
 import React from "react"
 
+import Complete from '../assets/complete.svg'
+import Edit from '../assets/edit.svg'
+import Delete from '../assets/delete.svg'
+
 
 export default function Task(props) {
 
@@ -39,9 +43,9 @@ export default function Task(props) {
 					<div className="Task_header">
 						<h3 className="Task_title">{props.title}</h3>
 						<div className="Task_Options">
-							<button className="Task_header_complete"></button>
-							<button className="Task_header_edit" onClick={() => setEditing(true)}></button>
-							<button className="Task_header_delete" onClick={handleDelete}></button>
+							<button className="Task_header_complete"><img src={Complete}/></button>
+							<button className="Task_header_edit" onClick={() => setEditing(true)}><img src={Edit}/></button>
+							<button className="Task_header_delete" onClick={handleDelete}><img src={Delete}/></button>
 						</div>
 					</div>
 					<p className="Task_description">{props.desc}</p>

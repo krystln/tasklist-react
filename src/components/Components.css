@@ -149,31 +149,25 @@
     gap: 0.5rem;
 }
 
-.Task_header_complete{
-    all:unset;
-
+.Task_Options > img{
     width: 2rem;
     height: 2rem;
-    background-image: url("./src/assets/complete.svg");
-    background-size: contain;
+    object-fit: contain;
 }
 
-.Task_header_edit{
+.Task_header_complete, .Task_header_edit, .Task_header_delete{
     all:unset;
 
     width: 2rem;
     height: 2rem;
-    background-image: url("./src/assets/edit.svg");
-    background-size: contain;
+    object-fit: contain;
 }
 
-.Task_header_delete{
+.Task_header_delete > img, .Task_header_edit > img, .Task_header_complete > img{
     all:unset;
-
     width: 2rem;
     height: 2rem;
-    background-image: url("./src/assets/delete.svg");
-    background-size: contain;
+    object-fit: contain;
 }
 
 .Task_header_edit:hover, .Task_header_delete:hover, .Task_header_complete:hover{
