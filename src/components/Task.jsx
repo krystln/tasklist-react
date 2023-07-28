@@ -6,7 +6,8 @@ import Delete from '../assets/delete.svg'
 import Undo from '../assets/undo.svg'
 
 
-export default function Task(props) {
+
+const Task = (props) => {
 
 	const [editing, setEditing] = React.useState(false);
 
@@ -83,3 +84,5 @@ export default function Task(props) {
 		</div>
 	)
 }
+
+export default Task;

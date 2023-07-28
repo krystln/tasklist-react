@@ -2,12 +2,12 @@ import React from "react";
 import Task from "./Task"
 import CreateTask from "./CreateTask";
 
-export default function TaskList(props) {
+const TaskList = (props) => {
 	const [list, setList] = React.useState(
 	[
 		{
 			id: 0,
-			title: "Lorem",
+			data: "Lorem",
 			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, nunc nisl ultricies nunc, vitae aliquam nisl nunc eget nunc.",
 			status: false
 		}
@@ -52,3 +52,5 @@ export default function TaskList(props) {
 		</div>
   	)
 }
+
+export default TaskList;

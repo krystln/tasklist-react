@@ -272,7 +272,7 @@
 
 @media screen and (max-width: 800px) and (min-width: 750px){
     .Task{
-        width: 70%%;
+        width: 70%;
         padding: 0.5rem;
     }
 }
@@ -287,5 +287,29 @@
         width: 100%;
 
         margin-bottom: 0;
+    }
+}
+
+
+.ThemeButton{
+    background-color: var(--BG_COLOR);
+    border: 2px solid white;
+    padding: 0.5rem;
+}
+
+.ThemeButton:hover{
+    cursor: pointer;
+    animation: BopUp 0.5s;
+}
+
+@keyframes BopUp{
+    25%{
+        transform: translateY(0.5rem);
+    }
+    50%{
+        transform: translateY(-0.5rem);
+    }
+    100%{
+        transform: translateY(0);
     }
 }
