@@ -1,56 +1,60 @@
-import React from "react";
-import Task from "./Task"
+import { useState, useReducer } from "react";
+import Task from "./Task";
 import CreateTask from "./CreateTask";
 
-const TaskList = (props) => {
-	const [list, setList] = React.useState(
-	[
-		{
-			id: 0,
-			data: "Lorem",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, nunc nisl ultricies nunc, vitae aliquam nisl nunc eget nunc.",
-			status: false
-		}
-	]);
+export const ACTIONS = {
+  ADD_TASK: "add-task",
+  EDIT_TASK: "edit-task",
+  DELETE_TASK: "delete-task",
+  TOGGLE_TASK: "toggle-task",
+};
 
-	function deleteListItem(listItemIndex){
-		setList(prevList => prevList.filter((item) => item.id != listItemIndex))
-	}	
+function reducer(tasks, action) {
+  switch (action.type) {
+    case ACTIONS.ADD_TASK:
+      return [
+        ...tasks,
+        {
+          id: Date.now(),
+          data: action.payload.data,
+          complete: false,
+        },
+      ];
 
+    case ACTIONS.EDIT_TASK:
+      return tasks.map((task) => {
+        if (task.id === action.payload.id)
+          return { ...task, data: action.payload.data };
+        return task;
+      });
 
-	function addListItem(listItem){
-		setList(prevList => [...prevList, listItem])
-	}
+    case ACTIONS.DELETE_TASK:
+      return tasks.filter((task) => task.id !== action.payload.id);
 
-	function editListItem(listItem){
-		setList(prevList => prevList.map(item => {
-			if(item.id === listItem.id)
-				return listItem
-			return item
-		}))
-	}
+    case ACTIONS.TOGGLE_TASK:
+      return tasks.map((task) => {
+        if (task.id === action.payload.id)
+          return { ...task, complete: !task.complete };
+        return task;
+      });
 
-	
-	const listComp = list.map(listItem => {
-		return <Task
-			key={listItem.id}
-			index={listItem.id}
-			title={listItem.title}
-			desc={listItem.desc}
-			status={listItem.status}
-			handleEditFunction={editListItem}
-			handleDeleteFunction={deleteListItem}
-			/>
-	})
-
-	
-
-  	return (
-		<div className="TaskList">
-			<CreateTask addTask = {addListItem} />
-			{listComp}
-		</div>
-  	)
+    default:
+      return tasks;
+  }
 }
+
+
+const TaskList = () => {
+  const [tasks, dispatch] = useReducer(reducer, []);
+
+  return (
+    <>
+      <CreateTask dispatch={dispatch} />
+      {tasks.map((task) => {
+        return <Task key={task.id} task={task} dispatch={dispatch}/>;
+      })}
+    </>
+  );
+};
 
 export default TaskList;
