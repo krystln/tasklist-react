@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 
 const ThemeValue = createContext();
 const ThemeValueToggle = createContext();
@@ -19,6 +19,11 @@ const Theme = ({ children }) => {
 	const toggleIsDark = () => {
 		setIsDark(prevValue => !prevValue);
 	}
+
+	useEffect(() => {
+		//console.log("Theme changed");
+		document.querySelector("html").style.backgroundColor = isDark ? 'var(--BG_DARK)' : 'var(--BG_LIGHT)';
+	}, [isDark]);
 
   return (
     <ThemeValue.Provider value={isDark}>

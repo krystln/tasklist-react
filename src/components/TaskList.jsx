@@ -1,6 +1,8 @@
-import { useState, useReducer } from "react";
+import { useState, useReducer, useContext } from "react";
 import Task from "./Task";
-import CreateTask from "./CreateTask";
+import TaskForm from "./TaskForm";
+
+import { theme } from "./Theme";
 
 export const ACTIONS = {
   ADD_TASK: "add-task",
@@ -43,17 +45,24 @@ function reducer(tasks, action) {
   }
 }
 
-
 const TaskList = () => {
   const [tasks, dispatch] = useReducer(reducer, []);
 
+  const isDark = theme();
+  const styleTheme = {
+    backgroundColor: isDark ? "var(--BG_DARK)" : "var(--BG_LIGHT)",
+    color: isDark ? "white" : "black",
+  };
+
   return (
-    <>
-      <CreateTask dispatch={dispatch} />
-      {tasks.map((task) => {
-        return <Task key={task.id} task={task} dispatch={dispatch}/>;
-      })}
-    </>
+    <div style={styleTheme} className="HomePage">
+      <TaskForm dispatch={dispatch} />
+      <div className="TaskList">
+        {tasks.map((task) => {
+          return <Task key={task.id} task={task} dispatch={dispatch} />;
+        })}
+      </div>
+    </div>
   );
 };
 

@@ -48,204 +48,107 @@
     text-decoration: none;
 }
 
-
-.CreateTask{
-    border: 1px solid gray;
-    border-radius: 5px;
-    padding: 1rem;
-
-    width: 18rem;
-    height: fit-content;
-    margin-right: 1rem;
-}
-.CreateTask > form{
+.TaskForm{
+    position: sticky;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    width: 300px;
+    min-width: 200px;
+
+    height: 300px;
+
+    padding: 1rem;
+    border: 2px solid white;
 }
 
-.CreateTask_title{
-    font-family: monospace;
-    color: white;
-
-    width: 60%;
-
-    margin-left: 1rem;
-    margin-bottom: 0.5rem;
-    background-color: transparent;
-    border: 2px solid gray;
-    border-radius: 5px;
-    font-size: x-large;
-    padding: 0.2rem; 
-    padding-left: 0.5rem; 
-}
-
-.CreateTask_description{
-    background-color: transparent;
-    color: white;
-
+.TaskFormInput{
+    background: transparent;
+    border-style: solid;
+    overflow: auto;
     resize: none;
-    border: 2px solid gray;
-    border-radius: 5px;
-    font-size: large;
-    padding: 0.2rem; 
-    padding-left: 0.5rem;
-    
-    width: 90%;
 
-    margin: 0rem 1rem 1rem 1rem;
-}
-
-.CreateTask_button{
-    font-family: monospace;
-    margin-left: 1rem;
-    background-color: transparent;
-    color: gray;
-    border: 2px solid gray;
-    border-radius: 5px;
-    font-size: large;
-    padding: 0.5rem;
-    height: fit-content;
-    width: fit-content;
-    margin-top: 0rem;
-}
-
-.CreateTask_button:active{
-    background-color: gray;
+    font-size: 1rem;
     color: white;
-    cursor: pointer;
+
+    height: 85%;
 }
 
-.CreateTask_button:hover{
-    cursor: pointer;
+.TaskFormSubmit{
+    background-color: rgb(34, 34, 34);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
+.TaskList{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+    
+    padding-right: 2.5rem;
+    width: 75vw;
+    height: 80vh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    
+}
+
+.TaskList::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
 
 .Task{
-    border: 1px solid gray;
-    border-radius: 5px;
-
-    background-color: transparent;
-    padding: 1.5rem;
-
-    width: 18rem;
-    min-width: 16.5rem;
-    height: fit-content;
-    max-height: 21rem;
     display: flex;
-    flex-direction: column;
-}
+    flex-direction: row-reverse;
+    gap: 0.5rem;
 
-.Task_header{
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    
-    margin-bottom: 1rem;
     align-items: center;
+
+    width: 100%;
+
+    padding: 1rem;
+    border: 2px solid white;
 }
 
-.Task_title{
-    font-size: 1.25rem;
-    max-width: 10rem;
+.TaskData{
+    font-size: large;
     overflow: auto;
-    margin: 0;
+
+    width: 90%;
 }
 
-.Task_description{
-    margin: 1rem 0 0 0;
-    overflow: auto;
-}
-
-.Task_Options{
+.TaskOptions{
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
 }
 
-.Task_Options > img{
-    width: 2rem;
-    height: 2rem;
-    object-fit: contain;
-}
-
-.Task_header_complete, .Task_header_edit, .Task_header_delete{
-    all:unset;
-
-    width: 2rem;
-    height: 2rem;
-    object-fit: contain;
-}
-
-.Task_header_delete > img, .Task_header_edit > img, .Task_header_complete > img{
-    all:unset;
-    width: 2rem;
-    height: 2rem;
-    object-fit: contain;
-}
-
-.Task_header_edit:hover, .Task_header_delete:hover, .Task_header_complete:hover{
-    cursor: pointer;
-}
-
-.Done{
-    background-color: rgba(50, 205, 50, 0.5);
-}
-
-
-.Task_editForm_title{
-    font-family: monospace;
+.TaskOptions > button{
+    background-color: rgb(34, 34, 34);
     color: white;
-    margin-left: 1rem;
-    margin-bottom: 0.5rem;
-    background-color: transparent;
-    border: 2px solid gray;
-    border-radius: 5px;
-    font-size: x-large;
-    padding: 0.2rem; 
-    padding-left: 0.5rem; 
-}
-
-.Task_editForm_description{
-    margin-left: 1rem;
-    background-color: transparent;
-    color: white;
-
-    resize: none;
-    border: 2px solid gray;
-    border-radius: 5px;
-    font-size: large;
-    padding: 0.2rem; 
-    padding-left: 0.5rem;
-    
-    width: 15rem;
-    height: 9rem;
-
-    margin-bottom: 1rem;
-}
-
-.Task_editForm_submit{
-    font-family: monospace;
-    margin-left: 1rem;
-    background-color: transparent;
-    color: gray;
-    border: 2px solid gray;
-    border-radius: 5px;
-    font-size: large;
+    border: none;
     padding: 0.5rem;
-    height: fit-content;
-    width: fit-content;
-    margin-top: 0rem;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
-.Task_editForm_submit:active{
-    background-color: gray;
-    color: white;
-    cursor: pointer;
-}
-
-.Task_editForm_submit:hover{
-    cursor: pointer;
+.HomePage{
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    margin-left: 5%;
+    margin-right: 5%;
+    gap: 2rem;
 }
 
 

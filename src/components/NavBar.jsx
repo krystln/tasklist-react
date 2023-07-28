@@ -8,7 +8,6 @@ const NavBar = () => {
   const toggleIsDark = themeToggle();
 
   const styleTheme = {
-    backgroundColor: isDark ? "var(--BG_DARK)" : "var(--BG_LIGHT)",
     color: isDark ? "var(--TEXT_DARK)" : "var(--TEXT_LIGHT)",
   };
 

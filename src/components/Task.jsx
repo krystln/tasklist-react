@@ -6,6 +6,7 @@ import Delete from "../assets/delete.svg";
 import Undo from "../assets/undo.svg";
 
 import { ACTIONS } from "./TaskList";
+import { theme } from "./Theme";
 
 const Task = ({ task, dispatch }) => {
   function handleComplete() {
@@ -13,29 +14,32 @@ const Task = ({ task, dispatch }) => {
   }
 
   function handleEdit() {
-	console.log("edit");
-	}
+    console.log("edit");
+  }
 
-	function handleDelete() {
-		dispatch({ type: ACTIONS.DELETE_TASK, payload: { id: task.id } })
-	}
+  function handleDelete() {
+    dispatch({ type: ACTIONS.DELETE_TASK, payload: { id: task.id } });
+  }
+
+  const isDark = theme();
+  const styleTheme = {
+	borderColor : isDark ? "white" : "black",
+  }
 
   return (
-    <div>
-      <div className="Task_header">
-        <div className="Task_Options">
-          <button className="Task_header_complete" onClick={handleComplete}>
-            <img src={Complete} />
-          </button>
-          <button className="Task_header_edit" onClick={handleEdit}>
-            <img src={Edit} />
-          </button>
-          <button className="Task_header_delete" onClick={handleDelete}>
-            <img src={Delete} />
-          </button>
-        </div>
+    <div className="Task" style={styleTheme}>
+      <div className="TaskOptions">
+        <button className="OptionsToggle" onClick={handleComplete}>
+          <img src={Complete} width={30} height={30} />
+        </button>
+        <button className="OptionsEdit" onClick={handleEdit}>
+          <img src={Edit}  width={30} height={30}/>
+        </button>
+        <button className="OptionsDelete" onClick={handleDelete}>
+          <img src={Delete} width={30} height={30}/>
+        </button>
       </div>
-      <p className="Task_description">{task.data + task.complete}</p>
+      <p className="TaskData">{task.data + task.complete}</p>
     </div>
   );
 };

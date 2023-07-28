@@ -7,4 +7,5 @@
 
   background-color: var(--BG_DARK);
 	color: var(--TEXT_DARK);
+	overflow: hidden;
 }
