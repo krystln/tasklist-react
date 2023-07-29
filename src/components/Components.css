@@ -108,14 +108,17 @@
 
 .OptionsToggle:hover{
     background-color: green;
+    cursor: pointer;
 }
 
 .OptionsEdit:hover{
     background-color: darkslateblue;
+    cursor: pointer;
 }
 
 .OptionsDelete:hover{
     background-color: darkred;
+    cursor: pointer;
 }
 
 .HomePage{
