@@ -1,4 +1,6 @@
 import "./Components.css";
+import Light from "../assets/lightThemeIcon.svg";
+import Dark from "../assets/darkThemeIcon.svg";
 
 import { theme, themeToggle } from "./Theme";
 
@@ -11,7 +13,7 @@ const NavBar = () => {
     borderColor: isDark ? "var(--TEXT_DARK)" : "var(--TEXT_LIGHT)",
   };
 
-  const source = isDark ? "/lightThemeIcon.svg" : "/darkThemeIcon.svg";
+  const source = isDark ? Light : Dark;
 
   return (
     <div className="NavBar" style={styleTheme}>
