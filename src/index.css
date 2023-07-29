@@ -9,3 +9,9 @@
 	color: var(--TEXT_DARK);
 	overflow: hidden;
 }
+
+@media(max-width: 768px) {
+  :root {
+	overflow: auto;
+	}
+}
