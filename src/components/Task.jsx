@@ -8,13 +8,13 @@ import Undo from "../assets/undo.svg";
 import { ACTIONS } from "./TaskList";
 import { theme } from "./Theme";
 
-const Task = ({ task, dispatch }) => {
+const Task = ({ task, dispatch, editFunction }) => {
   function handleComplete() {
     dispatch({ type: ACTIONS.TOGGLE_TASK, payload: { id: task.id } });
   }
 
   function handleEdit() {
-    console.log("edit");
+    editFunction(task);
   }
 
   function handleDelete() {
@@ -24,22 +24,24 @@ const Task = ({ task, dispatch }) => {
   const isDark = theme();
   const styleTheme = {
 	borderColor : isDark ? "white" : "black",
+	textDecoration : task.complete ? "line-through" : "none",
+	color : task.complete ? "grey" : "",
   }
 
   return (
     <div className="Task" style={styleTheme}>
       <div className="TaskOptions">
         <button className="OptionsToggle" onClick={handleComplete}>
-          <img src={Complete} width={30} height={30} />
+          <img src={task.complete ? Undo : Complete} width={30} height={30} />
         </button>
         <button className="OptionsEdit" onClick={handleEdit}>
           <img src={Edit}  width={30} height={30}/>
         </button>
         <button className="OptionsDelete" onClick={handleDelete}>
-          <img src={Delete} width={30} height={30}/>
+          <img src={Delete } width={30} height={30}/>
         </button>
       </div>
-      <p className="TaskData">{task.data + task.complete}</p>
+      <p className="TaskData">{task.data}</p>
     </div>
   );
 };

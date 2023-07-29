@@ -1,52 +1,18 @@
 .NavBar{
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid rgb(34, 34, 34);
-    margin-bottom: 2rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-}
-
-.NavBar_Title{
-    font-size: 2rem;
-}
-
-.NavBar_SideTitle{
-    display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 0.5rem;
-    font-size: large;
-    color: gray;
+
+    border-bottom: 2px solid white;
+    margin-bottom: 2rem;
+    
+    padding: 1rem 3rem;
 }
 
-.NavBar_tooltipContainer{
-    text-decoration: none;
-    width: 2rem;
-    height: 2rem;
+.NavBarTitle{
+    font-size: 32px;
 }
 
-.NavBar_logo{
-    width: 2rem;
-    height: 2rem;
-}
-
-.NavBar_tooltip{
-    border-radius: 5px;
-    padding: 0.5rem;
-    visibility: hidden;
-    position: relative;
-    top: 1.2rem;
-    right: 1.5rem;
-    background-color: rgb(34, 34, 34);
-    color: white;
-    text-align: center;
-}
-
-.NavBar_tooltipContainer:hover .NavBar_tooltip{
-    visibility: visible;
-    text-decoration: none;
-}
 
 .TaskForm{
     position: sticky;
@@ -94,12 +60,10 @@
     
     padding-right: 2.5rem;
     width: 75vw;
-    height: 80vh;
+    height: 75vh;
 
     overflow-y: auto;
     overflow-x: hidden;
-
-    
 }
 
 .TaskList::-webkit-scrollbar { 
@@ -142,6 +106,18 @@
     font-weight: bold;
 }
 
+.OptionsToggle:hover{
+    background-color: green;
+}
+
+.OptionsEdit:hover{
+    background-color: darkslateblue;
+}
+
+.OptionsDelete:hover{
+    background-color: darkred;
+}
+
 .HomePage{
     display: flex;
     flex-direction: row;
@@ -149,48 +125,6 @@
     margin-left: 5%;
     margin-right: 5%;
     gap: 2rem;
-}
-
-
-@media screen and (max-width: 600px){
-    .CreateTask{
-        width: 100%;
-        margin-right: 0;
-        padding: 0.75rem;
-    }
-
-    .CreateTask > form > *{
-        margin-left: 0;
-    }
-
-    .Task{
-        width: 80%;
-        padding: 0.5rem;
-    }
-
-    .Task_editForm > *{
-        margin-left: 0;
-    }
-}
-
-@media screen and (max-width: 800px) and (min-width: 750px){
-    .Task{
-        width: 70%;
-        padding: 0.5rem;
-    }
-}
-
-@media screen and (max-width: 500px){
-    .Task_header{
-        align-items: center;
-        justify-content: space-between;
-        display: flex;
-        flex-direction: column-reverse;
-        gap: 0.5rem;
-        width: 100%;
-
-        margin-bottom: 0;
-    }
 }
 
 
