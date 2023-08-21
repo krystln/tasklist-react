@@ -3,33 +3,34 @@ import { useState, createContext, useContext, useEffect } from "react";
 const ThemeValue = createContext();
 const ThemeValueToggle = createContext();
 
-
 export const theme = () => {
-	return useContext(ThemeValue);
-}
+  return useContext(ThemeValue);
+};
 
 export const themeToggle = () => {
-	return useContext(ThemeValueToggle);
-}
-
+  return useContext(ThemeValueToggle);
+};
 
 const Theme = ({ children }) => {
+  const [isDark, setIsDark] = useState(
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
+  const toggleIsDark = () => {
+    setIsDark((prevValue) => !prevValue);
+  };
 
-	const [isDark, setIsDark] = useState(true);
-	const toggleIsDark = () => {
-		setIsDark(prevValue => !prevValue);
-	}
-
-	useEffect(() => {
-		//console.log("Theme changed");
-		document.querySelector("html").style.backgroundColor = isDark ? 'var(--BG_DARK)' : 'var(--BG_LIGHT)';
-	}, [isDark]);
+  useEffect(() => {
+    //console.log("Theme changed");
+    document.querySelector("html").style.backgroundColor = isDark
+      ? "var(--BG_DARK)"
+      : "var(--BG_LIGHT)";
+  }, [isDark]);
 
   return (
     <ThemeValue.Provider value={isDark}>
       <ThemeValueToggle.Provider value={toggleIsDark}>
-				{ children }
-			</ThemeValueToggle.Provider>
+        {children}
+      </ThemeValueToggle.Provider>
     </ThemeValue.Provider>
   );
 };

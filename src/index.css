@@ -1,17 +1,28 @@
 :root {
   --BG_DARK: #0d1117;
-	--BG_LIGHT: #e7dac7;
+  --BG_LIGHT: #e7dac7;
 
-	--TEXT_DARK: #ffffff;
-	--TEXT_LIGHT: #000000;
+  --TEXT_DARK: #ffffff;
+  --TEXT_LIGHT: #000000;
 
-  background-color: var(--BG_DARK);
-	color: var(--TEXT_DARK);
-	overflow: hidden;
+  overflow: hidden;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   :root {
-	overflow: auto;
-	}
+    overflow: auto;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: var(--BG_DARK);
+    color: var(--TEXT_DARK);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: var(--BG_LIGHT);
+    color: var(--TEXT_LIGHT);
+  }
 }
